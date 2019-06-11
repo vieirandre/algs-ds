@@ -5,12 +5,10 @@ class SelectionSort extends AbstractSorting {
 
     @Override
     public void sort() {
-        int n = arr.length;
-
-        for (int i = 0; i < (n - 1); i++) {
+        for (int i = 0; i < (this.size - 1); i++) {
             int min = i;
 
-            for (int j = (i + 1); j < n; j++) {
+            for (int j = (i + 1); j < this.size; j++) {
                 if (arr[j] < arr[min])
                     min = j;
             }
