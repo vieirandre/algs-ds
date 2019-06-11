@@ -1,0 +1,3 @@
+interface ISortable {
+    void sort();
+}
