@@ -13,10 +13,7 @@ class SelectionSort extends AbstractSorting {
                     min = j;
             }
 
-            // swap
-            int temp = arr[min];
-            arr[min] = arr[i];
-            arr[i] = temp;
+            swap(min, i);
         }
     }
 }
