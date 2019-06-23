@@ -14,7 +14,19 @@ public class AbstractSortingTest {
         simpleExpected = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
 
-    @Test()
+    @BeforeClass
+    public static void initialize_LargeArrays() {
+        largeInput = new int[1000];
+
+        for (int i = 1; i <= largeInput.length; i++) {
+            largeInput[i-1] = i;
+        }
+
+        largeExpected = largeInput.clone();
+
+        shuffleArray(largeInput);
+    }
+
     public void testSimpleSort_BubbleSort() {
         algorithm = new BubbleSort(simpleInput);
         algorithm.sort();
