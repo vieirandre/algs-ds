@@ -7,14 +7,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class AbstractSortingTest {
-    static int[] simpleInput, simpleExpected;
-    static int[] largeInput, largeExpected;
+    static int[] simpleInput, simpleOutput;
+    static int[] largeInput, largeOutput;
     AbstractSorting algorithm;
     
     @BeforeClass
     public static void initialize_SimpleArrays() {
         simpleInput = new int[] { 5, 7, 3, 1, 4, 2, 6 };
-        simpleExpected = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+        simpleOutput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
 
     @BeforeClass
@@ -25,7 +25,7 @@ public class AbstractSortingTest {
             largeInput[i-1] = i;
         }
 
-        largeExpected = largeInput.clone();
+        largeOutput = largeInput.clone();
 
         shuffleArray(largeInput);
     }
@@ -49,7 +49,7 @@ public class AbstractSortingTest {
         algorithm = new BubbleSort(simpleInput);
         algorithm.sort();
 
-        assertArrayEquals(simpleExpected, algorithm.arr);
+        assertArrayEquals(simpleOutput, algorithm.arr);
     }
 
     @Test
@@ -57,7 +57,7 @@ public class AbstractSortingTest {
         algorithm = new BubbleSort(largeInput);
         algorithm.sort();
 
-        assertArrayEquals(largeExpected, algorithm.arr);
+        assertArrayEquals(largeOutput, algorithm.arr);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class AbstractSortingTest {
         algorithm = new InsertionSort(simpleInput);
         algorithm.sort();
 
-        assertArrayEquals(simpleExpected, algorithm.arr);
+        assertArrayEquals(simpleOutput, algorithm.arr);
     }
 
     @Test
@@ -73,7 +73,7 @@ public class AbstractSortingTest {
         algorithm = new InsertionSort(largeInput);
         algorithm.sort();
 
-        assertArrayEquals(largeExpected, algorithm.arr);
+        assertArrayEquals(largeOutput, algorithm.arr);
     }
 
     @Test
@@ -81,7 +81,7 @@ public class AbstractSortingTest {
         algorithm = new SelectionSort(simpleInput);
         algorithm.sort();
 
-        assertArrayEquals(simpleExpected, algorithm.arr);
+        assertArrayEquals(simpleOutput, algorithm.arr);
     }
 
     @Test
@@ -89,6 +89,6 @@ public class AbstractSortingTest {
         algorithm = new SelectionSort(largeInput);
         algorithm.sort();
 
-        assertArrayEquals(largeExpected, algorithm.arr);
+        assertArrayEquals(largeOutput, algorithm.arr);
     }
 }
