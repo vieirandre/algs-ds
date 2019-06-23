@@ -1,5 +1,8 @@
 import static org.junit.Assert.assertArrayEquals;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -25,6 +28,20 @@ public class AbstractSortingTest {
         largeExpected = largeInput.clone();
 
         shuffleArray(largeInput);
+    }
+
+    // Fisher–Yates shuffle
+    private static void shuffleArray(int[] array) {
+        Random rand = ThreadLocalRandom.current();
+
+        for (int i = array.length - 1; i > 0; i--) {
+            int idx = rand.nextInt(i + 1);
+            
+            // swap
+            int temp = array[idx];
+            array[idx] = array[i];
+            array[i] = temp;
+        }
     }
 
     public void testSimpleSort_BubbleSort() {
