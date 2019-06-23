@@ -4,36 +4,36 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class AbstractSortingTest {
-    static int[] input, expected;
+    static int[] simpleInput, simpleExpected;
     AbstractSorting algorithm;
     
     @BeforeClass
     public static void initialize() {
-        input = new int[] { 5, 7, 3, 1, 4, 2, 6 };
-        expected = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+        simpleInput = new int[] { 5, 7, 3, 1, 4, 2, 6 };
+        simpleExpected = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
 
     @Test()
     public void testSimpleSort_BubbleSort() {
-        algorithm = new BubbleSort(input);
+        algorithm = new BubbleSort(simpleInput);
         algorithm.sort();
 
-        assertArrayEquals(expected, algorithm.arr);
+        assertArrayEquals(simpleExpected, algorithm.arr);
     }
 
     @Test
     public void testSimpleSort_InsertionSort() {
-        algorithm = new InsertionSort(input);
+        algorithm = new InsertionSort(simpleInput);
         algorithm.sort();
 
-        assertArrayEquals(expected, algorithm.arr);
+        assertArrayEquals(simpleExpected, algorithm.arr);
     }
 
     @Test
     public void testSimpleSort_SelectionSort() {
-        algorithm = new SelectionSort(input);
+        algorithm = new SelectionSort(simpleInput);
         algorithm.sort();
 
-        assertArrayEquals(expected, algorithm.arr);
+        assertArrayEquals(simpleExpected, algorithm.arr);
     }
 }
