@@ -8,7 +8,7 @@ public class AbstractSortingTest {
     AbstractSorting algorithm;
     
     @BeforeClass
-    public static void initialize() {
+    public static void initialize_SimpleArrays() {
         simpleInput = new int[] { 5, 7, 3, 1, 4, 2, 6 };
         simpleExpected = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
