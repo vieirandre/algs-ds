@@ -5,7 +5,7 @@ class InsertionSort extends AbstractSorting {
 
     @Override
     public void sort() {
-        for (int i = 1; i < this.size; i++) {
+        for (int i = 1; i < size; i++) {
             int key = arr[i], j = i - 1;
 
             while (j >= 0 && key < arr[j]) {
