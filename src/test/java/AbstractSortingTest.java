@@ -20,4 +20,12 @@ public class AbstractSortingTest {
 
         assertArrayEquals(expected, algorithm.arr);
     }
+
+    @Test
+    public void testSimpleSort_InsertionSort() {
+        algorithm = new InsertionSort(input);
+        algorithm.sort();
+
+        assertArrayEquals(expected, algorithm.arr);
+    }
 }
