@@ -20,6 +20,9 @@ public class AbstractSortingTest {
 
         orderedInput = outputForSimpleInput.clone();
         outputForOrderedInput = outputForSimpleInput.clone();
+
+        reversedInput = new int[] { 7, 6, 5, 4, 3, 2, 1 };
+        outputForReversedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
 
     @BeforeClass
