@@ -9,12 +9,16 @@ import org.junit.Test;
 public class AbstractSortingTest {
     static int[] simpleInput, simpleOutput;
     static int[] largeInput, largeOutput;
+    static int[] orderedInput, orderedOutput;
     AbstractSorting algorithm;
     
     @BeforeClass
-    public static void initialize_SimpleArrays() {
+    public static void initialize_Simple_OrderedArrays() {
         simpleInput = new int[] { 5, 7, 3, 1, 4, 2, 6 };
         simpleOutput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+
+        orderedInput = simpleOutput.clone();
+        orderedOutput = simpleOutput.clone();
     }
 
     @BeforeClass
@@ -61,6 +65,14 @@ public class AbstractSortingTest {
     }
 
     @Test
+    public void testOrderedSort_BubbleSort() {
+        algorithm = new BubbleSort(orderedInput);
+        algorithm.sort();
+
+        assertArrayEquals(orderedOutput, algorithm.arr);
+    }
+
+    @Test
     public void testSimpleSort_InsertionSort() {
         algorithm = new InsertionSort(simpleInput);
         algorithm.sort();
@@ -77,6 +89,14 @@ public class AbstractSortingTest {
     }
 
     @Test
+    public void testOrderedSort_InsertionSort() {
+        algorithm = new InsertionSort(orderedInput);
+        algorithm.sort();
+
+        assertArrayEquals(orderedOutput, algorithm.arr);
+    }
+
+    @Test
     public void testSimpleSort_SelectionSort() {
         algorithm = new SelectionSort(simpleInput);
         algorithm.sort();
@@ -90,5 +110,13 @@ public class AbstractSortingTest {
         algorithm.sort();
 
         assertArrayEquals(largeOutput, algorithm.arr);
+    }
+
+    @Test
+    public void testOrderedSort_SelectionSort() {
+        algorithm = new SelectionSort(orderedInput);
+        algorithm.sort();
+
+        assertArrayEquals(orderedOutput, algorithm.arr);
     }
 }
