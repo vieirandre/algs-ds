@@ -10,6 +10,7 @@ public class AbstractSortingTest {
     static int[] simpleInput, outputForSimpleInput;
     static int[] largeInput, outputForLargeInput;
     static int[] orderedInput, outputForOrderedInput;
+    static int[] reversedInput, outputForReversedInput;
     AbstractSorting algorithm;
     
     @BeforeClass
