@@ -44,11 +44,20 @@ public class AbstractSortingTest {
         }
     }
 
+    @Test
     public void testSimpleSort_BubbleSort() {
         algorithm = new BubbleSort(simpleInput);
         algorithm.sort();
 
         assertArrayEquals(simpleExpected, algorithm.arr);
+    }
+
+    @Test
+    public void testLargeSort_BubbleSort() {
+        algorithm = new BubbleSort(largeInput);
+        algorithm.sort();
+
+        assertArrayEquals(largeExpected, algorithm.arr);
     }
 
     @Test
@@ -60,10 +69,26 @@ public class AbstractSortingTest {
     }
 
     @Test
+    public void testLargeSort_InsertionSort() {
+        algorithm = new InsertionSort(largeInput);
+        algorithm.sort();
+
+        assertArrayEquals(largeExpected, algorithm.arr);
+    }
+
+    @Test
     public void testSimpleSort_SelectionSort() {
         algorithm = new SelectionSort(simpleInput);
         algorithm.sort();
 
         assertArrayEquals(simpleExpected, algorithm.arr);
+    }
+
+    @Test
+    public void testLargeSort_SelectionSort() {
+        algorithm = new SelectionSort(largeInput);
+        algorithm.sort();
+
+        assertArrayEquals(largeExpected, algorithm.arr);
     }
 }
