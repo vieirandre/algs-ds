@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class AbstractSortingTest {
     static int[] simpleInput, simpleExpected;
+    static int[] largeInput, largeExpected;
     AbstractSorting algorithm;
     
     @BeforeClass
