@@ -28,4 +28,12 @@ public class AbstractSortingTest {
 
         assertArrayEquals(expected, algorithm.arr);
     }
+
+    @Test
+    public void testSimpleSort_SelectionSort() {
+        algorithm = new SelectionSort(input);
+        algorithm.sort();
+
+        assertArrayEquals(expected, algorithm.arr);
+    }
 }
