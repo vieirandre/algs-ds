@@ -53,7 +53,7 @@ public class AbstractSortingTest {
     }
 
     @Test
-    public void testSimpleSort_BubbleSort() {
+    public void testSimpleInput_BubbleSort() {
         algorithm = new BubbleSort(simpleInput);
         algorithm.sort();
 
@@ -61,7 +61,7 @@ public class AbstractSortingTest {
     }
 
     @Test
-    public void testLargeSort_BubbleSort() {
+    public void testLargeInput_BubbleSort() {
         algorithm = new BubbleSort(largeInput);
         algorithm.sort();
 
@@ -69,7 +69,7 @@ public class AbstractSortingTest {
     }
 
     @Test
-    public void testOrderedSort_BubbleSort() {
+    public void testOrderedInput_BubbleSort() {
         algorithm = new BubbleSort(orderedInput);
         algorithm.sort();
 
@@ -77,7 +77,7 @@ public class AbstractSortingTest {
     }
 
     @Test
-    public void testSimpleSort_InsertionSort() {
+    public void testSimpleInput_InsertionSort() {
         algorithm = new InsertionSort(simpleInput);
         algorithm.sort();
 
@@ -85,7 +85,7 @@ public class AbstractSortingTest {
     }
 
     @Test
-    public void testLargeSort_InsertionSort() {
+    public void testLargeInput_InsertionSort() {
         algorithm = new InsertionSort(largeInput);
         algorithm.sort();
 
@@ -93,7 +93,7 @@ public class AbstractSortingTest {
     }
 
     @Test
-    public void testOrderedSort_InsertionSort() {
+    public void testOrderedInput_InsertionSort() {
         algorithm = new InsertionSort(orderedInput);
         algorithm.sort();
 
@@ -101,7 +101,7 @@ public class AbstractSortingTest {
     }
 
     @Test
-    public void testSimpleSort_SelectionSort() {
+    public void testSimpleInput_SelectionSort() {
         algorithm = new SelectionSort(simpleInput);
         algorithm.sort();
 
@@ -109,7 +109,7 @@ public class AbstractSortingTest {
     }
 
     @Test
-    public void testLargeSort_SelectionSort() {
+    public void testLargeInput_SelectionSort() {
         algorithm = new SelectionSort(largeInput);
         algorithm.sort();
 
@@ -117,7 +117,7 @@ public class AbstractSortingTest {
     }
 
     @Test
-    public void testOrderedSort_SelectionSort() {
+    public void testOrderedInput_SelectionSort() {
         algorithm = new SelectionSort(orderedInput);
         algorithm.sort();
 
