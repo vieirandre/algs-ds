@@ -77,6 +77,14 @@ public class AbstractSortingTest {
     }
 
     @Test
+    public void testReversedInput_BubbleSort() {
+        algorithm = new BubbleSort(reversedInput);
+        algorithm.sort();
+
+        assertArrayEquals(outputForReversedInput, algorithm.arr);
+    }
+
+    @Test
     public void testSimpleInput_InsertionSort() {
         algorithm = new InsertionSort(simpleInput);
         algorithm.sort();
@@ -101,6 +109,14 @@ public class AbstractSortingTest {
     }
 
     @Test
+    public void testReversedInput_InsertionSort() {
+        algorithm = new InsertionSort(reversedInput);
+        algorithm.sort();
+
+        assertArrayEquals(outputForReversedInput, algorithm.arr);
+    }
+
+    @Test
     public void testSimpleInput_SelectionSort() {
         algorithm = new SelectionSort(simpleInput);
         algorithm.sort();
@@ -122,5 +138,13 @@ public class AbstractSortingTest {
         algorithm.sort();
 
         assertArrayEquals(outputForOrderedInput, algorithm.arr);
+    }
+
+    @Test
+    public void testReversedInput_SelectionSort() {
+        algorithm = new SelectionSort(reversedInput);
+        algorithm.sort();
+
+        assertArrayEquals(outputForReversedInput, algorithm.arr);
     }
 }
