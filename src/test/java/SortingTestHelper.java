@@ -23,7 +23,7 @@ public class SortingTestHelper {
     }
 
     public void initialize_LargeInput_Case() {
-        largeInput = new int[1000];
+        largeInput = new int[50000];
 
         for (int i = 1; i <= largeInput.length; i++) {
             largeInput[i-1] = i;
