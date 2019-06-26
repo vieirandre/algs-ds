@@ -5,11 +5,11 @@ import org.junit.Test;
 
 public class BubbleSortTest {
     private AbstractSorting algorithm;
-    private static AbstractSortingTestHelper helper;
+    private static SortingTestHelper helper;
 
     @BeforeClass
     public static void initialize() {
-        helper = new AbstractSortingTestHelper();
+        helper = new SortingTestHelper();
 
         helper.initialize_SimpleInput_Case();
         helper.initialize_OrderedInput_Case();

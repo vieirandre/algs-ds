@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class AbstractSortingTestHelper {
+public class SortingTestHelper {
     private int[] simpleInput, outputForSimpleInput;
     private int[] orderedInput, outputForOrderedInput;
     private int[] reversedInput, outputForReversedInput;
