@@ -12,8 +12,8 @@ public class BubbleSortTest {
         helper = new SortingTestHelper();
 
         helper.initialize_SimpleInput_Case();
-        helper.initialize_OrderedInput_Case();
-        helper.initialize_ReversedInput_Case();
+        helper.initialize_SimpleOrderedInput_Case();
+        helper.initialize_SimpleReversedInput_Case();
         helper.initialize_LargeInput_Case();
     }
 
@@ -26,26 +26,26 @@ public class BubbleSortTest {
     }
 
     @Test
+    public void testSimpleOrderedInput_BubbleSort() {
+        algorithm = new BubbleSort(helper.getSimpleOrderedInput());
+        algorithm.sort();
+
+        assertArrayEquals(helper.getOutputForSimpleOrderedInput(), algorithm.arr);
+    }
+
+    @Test
+    public void testSimpleReversedInput_BubbleSort() {
+        algorithm = new BubbleSort(helper.getSimpleReversedInput());
+        algorithm.sort();
+
+        assertArrayEquals(helper.getOutputForSimpleReversedInput(), algorithm.arr);
+    }
+
+    @Test
     public void testLargeInput_BubbleSort() {
         algorithm = new BubbleSort(helper.getLargeInput());
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForLargeInput(), algorithm.arr);
-    }
-
-    @Test
-    public void testOrderedInput_BubbleSort() {
-        algorithm = new BubbleSort(helper.getOrderedInput());
-        algorithm.sort();
-
-        assertArrayEquals(helper.getOutputForOrderedInput(), algorithm.arr);
-    }
-
-    @Test
-    public void testReversedInput_BubbleSort() {
-        algorithm = new BubbleSort(helper.getReversedInput());
-        algorithm.sort();
-
-        assertArrayEquals(helper.getOutputForReversedInput(), algorithm.arr);
     }
 }

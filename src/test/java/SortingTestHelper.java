@@ -3,8 +3,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SortingTestHelper {
     private int[] simpleInput, outputForSimpleInput;
-    private int[] orderedInput, outputForOrderedInput;
-    private int[] reversedInput, outputForReversedInput;
+    private int[] simpleOrderedInput, outputForSimpleOrderedInput;
+    private int[] simpleReversedInput, outputForSimpleReversedInput;
     private int[] largeInput, outputForLargeInput;
 
     public void initialize_SimpleInput_Case() {
@@ -12,14 +12,14 @@ public class SortingTestHelper {
         outputForSimpleInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
 
-    public void initialize_OrderedInput_Case() {
-        orderedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-        outputForOrderedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+    public void initialize_SimpleOrderedInput_Case() {
+        simpleOrderedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+        outputForSimpleOrderedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
 
-    public void initialize_ReversedInput_Case() {
-        reversedInput = new int[] { 7, 6, 5, 4, 3, 2, 1 };
-        outputForReversedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+    public void initialize_SimpleReversedInput_Case() {
+        simpleReversedInput = new int[] { 7, 6, 5, 4, 3, 2, 1 };
+        outputForSimpleReversedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
 
     public void initialize_LargeInput_Case() {
@@ -56,20 +56,20 @@ public class SortingTestHelper {
         return outputForSimpleInput;
     }
 
-    public int[] getOrderedInput() {
-        return orderedInput;
+    public int[] getSimpleOrderedInput() {
+        return simpleOrderedInput;
     }
 
-    public int[] getOutputForOrderedInput() {
-        return outputForOrderedInput;
+    public int[] getOutputForSimpleOrderedInput() {
+        return outputForSimpleOrderedInput;
     }
 
-    public int[] getReversedInput() {
-        return reversedInput;
+    public int[] getSimpleReversedInput() {
+        return simpleReversedInput;
     }
 
-    public int[] getOutputForReversedInput() {
-        return outputForReversedInput;
+    public int[] getOutputForSimpleReversedInput() {
+        return outputForSimpleReversedInput;
     }
 
     public int[] getLargeInput() {
