@@ -11,10 +11,10 @@ public class BubbleSortTest {
     public static void initialize() {
         helper = new AbstractSortingTestHelper();
 
-        helper.initialize_SimpleArray();
-        helper.initialize_OrderedArray();
-        helper.initialize_ReversedArray();
-        helper.initialize_LargeArray();
+        helper.initialize_SimpleInput_Case();
+        helper.initialize_OrderedInput_Case();
+        helper.initialize_ReversedInput_Case();
+        helper.initialize_LargeInput_Case();
     }
 
     @Test

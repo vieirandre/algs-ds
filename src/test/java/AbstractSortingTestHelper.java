@@ -7,22 +7,22 @@ public class AbstractSortingTestHelper {
     private int[] reversedInput, outputForReversedInput;
     private int[] largeInput, outputForLargeInput;
 
-    public void initialize_SimpleArray() {
+    public void initialize_SimpleInput_Case() {
         simpleInput = new int[] { 5, 7, 3, 1, 4, 2, 6 };
         outputForSimpleInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
 
-    public void initialize_OrderedArray() {
+    public void initialize_OrderedInput_Case() {
         orderedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
         outputForOrderedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
 
-    public void initialize_ReversedArray() {
+    public void initialize_ReversedInput_Case() {
         reversedInput = new int[] { 7, 6, 5, 4, 3, 2, 1 };
         outputForReversedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
     }
 
-    public void initialize_LargeArray() {
+    public void initialize_LargeInput_Case() {
         largeInput = new int[1000];
 
         for (int i = 1; i <= largeInput.length; i++) {
