@@ -1,6 +1,6 @@
 class BubbleSort extends AbstractSorting {
-    public BubbleSort(int[] arr) {
-        super(arr);
+    public BubbleSort(int[] input) {
+        super(input);
     }
 
     @Override

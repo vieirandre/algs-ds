@@ -1,6 +1,6 @@
 class SelectionSort extends AbstractSorting {
-    public SelectionSort(int[] arr) {
-        super(arr);
+    public SelectionSort(int[] input) {
+        super(input);
     }
 
     @Override

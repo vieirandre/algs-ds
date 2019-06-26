@@ -1,6 +1,6 @@
 class InsertionSort extends AbstractSorting {
-    public InsertionSort(int[] arr) {
-        super(arr);
+    public InsertionSort(int[] input) {
+        super(input);
     }
 
     @Override
