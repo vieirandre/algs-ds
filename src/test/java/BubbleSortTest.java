@@ -4,8 +4,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class BubbleSortTest {
-    AbstractSorting algorithm;
-    static AbstractSortingTestHelper helper;
+    private AbstractSorting algorithm;
+    private static AbstractSortingTestHelper helper;
 
     @BeforeClass
     public static void initialize() {
