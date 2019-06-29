@@ -49,34 +49,34 @@ public class SortingTestHelper {
     }
 
     public int[] getSimpleInput() {
-        return simpleInput;
+        return simpleInput.clone();
     }
 
     public int[] getOutputForSimpleInput() {
-        return outputForSimpleInput;
+        return outputForSimpleInput.clone();
     }
 
     public int[] getSimpleOrderedInput() {
-        return simpleOrderedInput;
+        return simpleOrderedInput.clone();
     }
 
     public int[] getOutputForSimpleOrderedInput() {
-        return outputForSimpleOrderedInput;
+        return outputForSimpleOrderedInput.clone();
     }
 
     public int[] getSimpleReversedInput() {
-        return simpleReversedInput;
+        return simpleReversedInput.clone();
     }
 
     public int[] getOutputForSimpleReversedInput() {
-        return outputForSimpleReversedInput;
+        return outputForSimpleReversedInput.clone();
     }
 
     public int[] getLargeInput() {
-        return largeInput;
+        return largeInput.clone();
     }
 
     public int[] getOutputForLargeInput() {
-        return outputForLargeInput;
+        return outputForLargeInput.clone();
     }
 }
