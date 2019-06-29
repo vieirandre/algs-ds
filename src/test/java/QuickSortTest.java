@@ -19,7 +19,7 @@ public class QuickSortTest {
 
     @Test
     public void testSimpleInput_QuickSort() {
-        algorithm = new QuickSort(helper.getSimpleInput());
+        algorithm = new QuickSort(helper.getSimpleInput(), false);
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForSimpleInput(), algorithm.arr);
@@ -27,7 +27,7 @@ public class QuickSortTest {
 
     @Test
     public void testSimpleOrderedInput_QuickSort() {
-        algorithm = new QuickSort(helper.getSimpleOrderedInput());
+        algorithm = new QuickSort(helper.getSimpleOrderedInput(), false);
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForSimpleOrderedInput(), algorithm.arr);
@@ -35,7 +35,7 @@ public class QuickSortTest {
 
     @Test
     public void testSimpleReversedInput_QuickSort() {
-        algorithm = new QuickSort(helper.getSimpleReversedInput());
+        algorithm = new QuickSort(helper.getSimpleReversedInput(), false);
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForSimpleReversedInput(), algorithm.arr);
@@ -43,7 +43,7 @@ public class QuickSortTest {
 
     @Test
     public void testLargeInput_QuickSort() {
-        algorithm = new QuickSort(helper.getLargeInput());
+        algorithm = new QuickSort(helper.getLargeInput(), false);
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForLargeInput(), algorithm.arr);
