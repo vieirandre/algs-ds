@@ -1,6 +1,11 @@
+import java.util.concurrent.ThreadLocalRandom;
+
 class QuickSort extends AbstractSorting {
-    public QuickSort(int[] input) {
+    private boolean isRandomPivot = false;
+
+    public QuickSort(int[] input, boolean randomPivot) {
         super(input);
+        this.isRandomPivot = randomPivot;
     }
 
     @Override
@@ -18,7 +23,9 @@ class QuickSort extends AbstractSorting {
     }
 
     private int partition(int startIdx, int endIdx) {
-        int pivot = arr[endIdx]; // last element as pivot
+        if (isRandomPivot) randomizePivot(startIdx, endIdx);
+
+        int pivot = arr[endIdx]; // if !random, last element as pivot
         int i = startIdx - 1;
 
         for(int j = startIdx; j < endIdx; j++) {
@@ -31,5 +38,12 @@ class QuickSort extends AbstractSorting {
         swap(i + 1, endIdx);
 
         return i + 1;
+    }
+
+    void randomizePivot(int startIdx, int endIdx) {
+        int pivot = ThreadLocalRandom.current()
+                    .nextInt(endIdx - startIdx) + startIdx;
+
+        swap(pivot, endIdx);
     }
 }
