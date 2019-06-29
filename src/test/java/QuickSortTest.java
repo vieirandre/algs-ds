@@ -26,8 +26,24 @@ public class QuickSortTest {
     }
 
     @Test
+    public void testSimpleInput_RandomPivot_QuickSort() {
+        algorithm = new QuickSort(helper.getSimpleInput(), true);
+        algorithm.sort();
+
+        assertArrayEquals(helper.getOutputForSimpleInput(), algorithm.arr);
+    }
+
+    @Test
     public void testSimpleOrderedInput_QuickSort() {
         algorithm = new QuickSort(helper.getSimpleOrderedInput(), false);
+        algorithm.sort();
+
+        assertArrayEquals(helper.getOutputForSimpleOrderedInput(), algorithm.arr);
+    }
+
+    @Test
+    public void testSimpleOrderedInput_RandomPivot_QuickSort() {
+        algorithm = new QuickSort(helper.getSimpleOrderedInput(), true);
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForSimpleOrderedInput(), algorithm.arr);
@@ -42,8 +58,24 @@ public class QuickSortTest {
     }
 
     @Test
+    public void testSimpleReversedInput_RandomPivot_QuickSort() {
+        algorithm = new QuickSort(helper.getSimpleReversedInput(), true);
+        algorithm.sort();
+
+        assertArrayEquals(helper.getOutputForSimpleReversedInput(), algorithm.arr);
+    }
+
+    @Test
     public void testLargeInput_QuickSort() {
         algorithm = new QuickSort(helper.getLargeInput(), false);
+        algorithm.sort();
+
+        assertArrayEquals(helper.getOutputForLargeInput(), algorithm.arr);
+    }
+
+    @Test
+    public void testLargeInput_RandomPivot_QuickSort() {
+        algorithm = new QuickSort(helper.getLargeInput(), true);
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForLargeInput(), algorithm.arr);
