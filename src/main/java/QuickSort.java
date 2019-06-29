@@ -3,9 +3,9 @@ import java.util.concurrent.ThreadLocalRandom;
 class QuickSort extends AbstractSorting {
     private boolean isRandomPivot = false;
 
-    public QuickSort(int[] input, boolean randomPivot) {
+    public QuickSort(int[] input, boolean isRandomPivot) {
         super(input);
-        this.isRandomPivot = randomPivot;
+        this.isRandomPivot = isRandomPivot;
     }
 
     @Override
