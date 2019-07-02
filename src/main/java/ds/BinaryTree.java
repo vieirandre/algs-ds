@@ -37,4 +37,9 @@ class BinaryTree extends AbstractBinaryTree {
     public void print() {
 
     }
+
+    @Override
+    Node getRoot() {
+        return (Node) root;
+    }
 }
