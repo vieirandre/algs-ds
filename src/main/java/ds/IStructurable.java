@@ -1,8 +1,8 @@
 package ds;
 
 interface IStructurable {
-    boolean insert();
-    boolean remove();
-    boolean search();
+    boolean insert(AbstractNode node);
+    boolean remove(AbstractNode node);
+    boolean search(int value);
     void print();
 }
