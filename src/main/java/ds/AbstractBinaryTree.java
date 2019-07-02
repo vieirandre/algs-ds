@@ -10,4 +10,6 @@ abstract class AbstractBinaryTree implements IStructurable {
     public AbstractBinaryTree(AbstractNode node) {
         root = node;
     }
+
+    abstract AbstractNode getRoot();
 }
