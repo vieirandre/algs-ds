@@ -1,3 +1,5 @@
+package algs;
+
 class MergeSort extends AbstractSorting {
     public MergeSort(int[] input) {
         super(input);

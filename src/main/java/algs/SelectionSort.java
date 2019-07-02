@@ -1,3 +1,5 @@
+package algs;
+
 class SelectionSort extends AbstractSorting {
     public SelectionSort(int[] input) {
         super(input);

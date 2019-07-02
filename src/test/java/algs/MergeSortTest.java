@@ -1,9 +1,11 @@
+package algs;
+
 import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class InsertionSortTest {
+public class MergeSortTest {
     private AbstractSorting algorithm;
     private static SortingTestHelper helper;
 
@@ -18,32 +20,32 @@ public class InsertionSortTest {
     }
 
     @Test
-    public void testSimpleInput_InsertionSort() {
-        algorithm = new InsertionSort(helper.getSimpleInput());
+    public void testSimpleInput_MergeSort() {
+        algorithm = new MergeSort(helper.getSimpleInput());
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForSimpleInput(), algorithm.arr);
     }
 
     @Test
-    public void testSimpleOrderedInput_InsertionSort() {
-        algorithm = new InsertionSort(helper.getSimpleOrderedInput());
+    public void testSimpleOrderedInput_MergeSort() {
+        algorithm = new MergeSort(helper.getSimpleOrderedInput());
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForSimpleOrderedInput(), algorithm.arr);
     }
 
     @Test
-    public void testSimpleReversedInput_InsertionSort() {
-        algorithm = new InsertionSort(helper.getSimpleReversedInput());
+    public void testSimpleReversedInput_MergeSort() {
+        algorithm = new MergeSort(helper.getSimpleReversedInput());
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForSimpleReversedInput(), algorithm.arr);
     }
 
     @Test
-    public void testLargeInput_InsertionSort() {
-        algorithm = new InsertionSort(helper.getLargeInput());
+    public void testLargeInput_MergeSort() {
+        algorithm = new MergeSort(helper.getLargeInput());
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForLargeInput(), algorithm.arr);

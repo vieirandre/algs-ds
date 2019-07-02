@@ -1,9 +1,11 @@
+package algs;
+
 import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MergeSortTest {
+public class BubbleSortTest {
     private AbstractSorting algorithm;
     private static SortingTestHelper helper;
 
@@ -18,32 +20,32 @@ public class MergeSortTest {
     }
 
     @Test
-    public void testSimpleInput_MergeSort() {
-        algorithm = new MergeSort(helper.getSimpleInput());
+    public void testSimpleInput_BubbleSort() {
+        algorithm = new BubbleSort(helper.getSimpleInput());
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForSimpleInput(), algorithm.arr);
     }
 
     @Test
-    public void testSimpleOrderedInput_MergeSort() {
-        algorithm = new MergeSort(helper.getSimpleOrderedInput());
+    public void testSimpleOrderedInput_BubbleSort() {
+        algorithm = new BubbleSort(helper.getSimpleOrderedInput());
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForSimpleOrderedInput(), algorithm.arr);
     }
 
     @Test
-    public void testSimpleReversedInput_MergeSort() {
-        algorithm = new MergeSort(helper.getSimpleReversedInput());
+    public void testSimpleReversedInput_BubbleSort() {
+        algorithm = new BubbleSort(helper.getSimpleReversedInput());
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForSimpleReversedInput(), algorithm.arr);
     }
 
     @Test
-    public void testLargeInput_MergeSort() {
-        algorithm = new MergeSort(helper.getLargeInput());
+    public void testLargeInput_BubbleSort() {
+        algorithm = new BubbleSort(helper.getLargeInput());
         algorithm.sort();
 
         assertArrayEquals(helper.getOutputForLargeInput(), algorithm.arr);

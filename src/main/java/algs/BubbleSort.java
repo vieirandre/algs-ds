@@ -1,3 +1,5 @@
+package algs;
+
 class BubbleSort extends AbstractSorting {
     public BubbleSort(int[] input) {
         super(input);

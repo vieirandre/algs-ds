@@ -1,3 +1,5 @@
+package algs;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 class QuickSort extends AbstractSorting {

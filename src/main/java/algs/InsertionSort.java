@@ -1,3 +1,5 @@
+package algs;
+
 class InsertionSort extends AbstractSorting {
     public InsertionSort(int[] input) {
         super(input);
