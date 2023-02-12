@@ -2,7 +2,7 @@ package algs;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-class QuickSort extends AbstractSorting {
+public class QuickSort extends AbstractSorting {
     private boolean isRandomPivot = false;
 
     public QuickSort(int[] input, boolean isRandomPivot) {
@@ -25,12 +25,13 @@ class QuickSort extends AbstractSorting {
     }
 
     private int partition(int startIdx, int endIdx) {
-        if (isRandomPivot) randomizePivot(startIdx, endIdx);
+        if (isRandomPivot)
+            randomizePivot(startIdx, endIdx);
 
         int pivot = arr[endIdx]; // if !random, last element as pivot
         int i = startIdx - 1;
 
-        for(int j = startIdx; j < endIdx; j++) {
+        for (int j = startIdx; j < endIdx; j++) {
             if (arr[j] <= pivot) {
                 i++;
                 swap(i, j);
@@ -43,8 +44,7 @@ class QuickSort extends AbstractSorting {
     }
 
     void randomizePivot(int startIdx, int endIdx) {
-        int pivot = ThreadLocalRandom.current()
-                    .nextInt(endIdx - startIdx) + startIdx;
+        int pivot = ThreadLocalRandom.current().nextInt(endIdx - startIdx) + startIdx;
 
         swap(pivot, endIdx);
     }

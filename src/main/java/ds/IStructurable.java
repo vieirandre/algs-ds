@@ -1,6 +1,6 @@
 package ds;
 
-interface IStructurable<T> {
+public interface IStructurable<T> {
   void insert(T item);
 
   T remove(T item);

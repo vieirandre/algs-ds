@@ -1,6 +1,6 @@
 package algs;
 
-class MergeSort extends AbstractSorting {
+public class MergeSort extends AbstractSorting {
     public MergeSort(int[] input) {
         super(input);
     }
@@ -34,7 +34,9 @@ class MergeSort extends AbstractSorting {
         for (j = 0; j < rightSize; j++)
             rightArray[j] = arr[middle + 1 + j]; // copy to right array
 
-        i = 0; j = 0; k = leftIdx; // initial indexes of subarrays
+        i = 0;
+        j = 0;
+        k = leftIdx; // initial indexes of subarrays
 
         // merge left and right arrays
         while (i < leftSize && j < rightSize) {

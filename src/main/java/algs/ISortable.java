@@ -1,5 +1,5 @@
 package algs;
 
-interface ISortable {
+public interface ISortable {
     void sort();
 }

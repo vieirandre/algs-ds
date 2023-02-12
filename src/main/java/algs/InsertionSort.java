@@ -1,6 +1,6 @@
 package algs;
 
-class InsertionSort extends AbstractSorting {
+public class InsertionSort extends AbstractSorting {
     public InsertionSort(int[] input) {
         super(input);
     }
@@ -17,5 +17,5 @@ class InsertionSort extends AbstractSorting {
 
             arr[j + 1] = key;
         }
-    }    
+    }
 }

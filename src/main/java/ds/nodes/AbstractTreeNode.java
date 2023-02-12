@@ -1,6 +1,6 @@
 package ds.nodes;
 
-abstract class AbstractTreeNode<T> {
+public abstract class AbstractTreeNode<T> {
     protected T value;
     protected AbstractTreeNode<T> parent;
 

@@ -1,6 +1,6 @@
 package algs;
 
-abstract class AbstractSorting implements ISortable {
+public abstract class AbstractSorting implements ISortable {
     int[] arr;
     int size;
 
