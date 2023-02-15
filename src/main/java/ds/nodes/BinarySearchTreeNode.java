@@ -16,6 +16,9 @@ public class BinarySearchTreeNode<T extends Comparable<T>> extends AbstractTreeN
 
     public void setLeftChild(BinarySearchTreeNode<T> left) {
         this.leftChild = left;
+
+        if (left != null)
+            left.setParent(this);
     }
 
     public BinarySearchTreeNode<T> getRightChild() {
@@ -24,5 +27,8 @@ public class BinarySearchTreeNode<T extends Comparable<T>> extends AbstractTreeN
 
     public void setRightChild(BinarySearchTreeNode<T> right) {
         this.rightChild = right;
+
+        if (right != null)
+            right.setParent(this);
     }
 }
