@@ -15,4 +15,12 @@ public abstract class AbstractTreeNode<T> {
     public void setValue(T value) {
         this.value = value;
     }
+
+    public AbstractTreeNode<T> getParent() {
+        return parent;
+    }
+
+    public void setParent(AbstractTreeNode<T> parent) {
+        this.parent = parent;
+    }
 }
