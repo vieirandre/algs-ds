@@ -1,28 +1,28 @@
 package ds.nodes;
 
 public class BinarySearchTreeNode<T extends Comparable<T>> extends AbstractTreeNode<T> {
-    protected BinarySearchTreeNode<T> left;
-    protected BinarySearchTreeNode<T> right;
+    private BinarySearchTreeNode<T> leftChild;
+    private BinarySearchTreeNode<T> rightChild;
 
     public BinarySearchTreeNode(T value) {
         super(value);
-        this.left = null;
-        this.right = null;
+        this.leftChild = null;
+        this.rightChild = null;
     }
 
-    public BinarySearchTreeNode<T> getLeft() {
-        return left;
+    public BinarySearchTreeNode<T> getLeftChild() {
+        return leftChild;
     }
 
-    public void setLeft(BinarySearchTreeNode<T> left) {
-        this.left = left;
+    public void setLeftChild(BinarySearchTreeNode<T> left) {
+        this.leftChild = left;
     }
 
-    public BinarySearchTreeNode<T> getRight() {
-        return right;
+    public BinarySearchTreeNode<T> getRightChild() {
+        return rightChild;
     }
 
-    public void setRight(BinarySearchTreeNode<T> right) {
-        this.right = right;
+    public void setRightChild(BinarySearchTreeNode<T> right) {
+        this.rightChild = right;
     }
 }
