@@ -1,6 +1,7 @@
 package ds.nodes;
 
-public class BinarySearchTreeNode<T extends Comparable<T>> extends AbstractTreeNode<T> {
+public class BinarySearchTreeNode<T extends Comparable<T>> extends AbstractTreeNode<T>
+        implements Comparable<BinarySearchTreeNode<T>> {
     private BinarySearchTreeNode<T> leftChild;
     private BinarySearchTreeNode<T> rightChild;
 
@@ -30,5 +31,10 @@ public class BinarySearchTreeNode<T extends Comparable<T>> extends AbstractTreeN
 
         if (right != null)
             right.setParent(this);
+    }
+
+    @Override
+    public int compareTo(BinarySearchTreeNode<T> otherNode) {
+        return this.getValue().compareTo(otherNode.getValue());
     }
 }
