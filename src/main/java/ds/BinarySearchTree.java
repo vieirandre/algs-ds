@@ -3,13 +3,14 @@ package ds;
 import java.util.List;
 import ds.nodes.BinarySearchTreeNode;
 
-public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
+public class BinarySearchTree<T extends Comparable<T>>
+        implements ITree<T, BinarySearchTreeNode<T>> {
     private BinarySearchTreeNode<T> root;
     private int size;
 
     public BinarySearchTree() {
-        root = null;
-        size = 0;
+        this.root = null;
+        this.size = 0;
     }
 
     @Override
@@ -29,32 +30,32 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
 
     @Override
     public boolean isEmpty() {
-        return size == 0;
+        return this.size == 0;
     }
 
     @Override
     public int size() {
-        return size;
+        return this.size;
     }
 
     @Override
     public void clear() {
-        root = null;
-        size = 0;
+        this.root = null;
+        this.size = 0;
     }
 
     @Override
-    public T getRoot() {
-        return root != null ? root.getValue() : null;
+    public BinarySearchTreeNode<T> getRoot() {
+        return this.root;
     }
 
     @Override
-    public T getParent(T node) {
+    public BinarySearchTreeNode<T> getParent(BinarySearchTreeNode<T> node) {
         return null;
     }
 
     @Override
-    public List<T> getChildren(T node) {
+    public List<BinarySearchTreeNode<T>> getChildren(BinarySearchTreeNode<T> node) {
         return null;
     }
 }

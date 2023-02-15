@@ -1,6 +1,7 @@
 package ds.nodes;
 
-public class BinarySearchTreeNode<T extends Comparable<T>> extends AbstractTreeNode<T>
+public class BinarySearchTreeNode<T extends Comparable<T>>
+        extends AbstractTreeNode<T, BinarySearchTreeNode<T>>
         implements Comparable<BinarySearchTreeNode<T>> {
     private BinarySearchTreeNode<T> leftChild;
     private BinarySearchTreeNode<T> rightChild;
@@ -12,7 +13,7 @@ public class BinarySearchTreeNode<T extends Comparable<T>> extends AbstractTreeN
     }
 
     public BinarySearchTreeNode<T> getLeftChild() {
-        return leftChild;
+        return this.leftChild;
     }
 
     public void setLeftChild(BinarySearchTreeNode<T> left) {
@@ -23,7 +24,7 @@ public class BinarySearchTreeNode<T extends Comparable<T>> extends AbstractTreeN
     }
 
     public BinarySearchTreeNode<T> getRightChild() {
-        return rightChild;
+        return this.rightChild;
     }
 
     public void setRightChild(BinarySearchTreeNode<T> right) {

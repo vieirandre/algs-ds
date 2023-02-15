@@ -1,11 +1,12 @@
 package ds;
 
 import java.util.List;
+import ds.nodes.AbstractTreeNode;
 
-public interface ITree<T> extends IStructurable<T> {
-    T getRoot();
+public interface ITree<T, N extends AbstractTreeNode<T, N>> extends IStructurable<T> {
+    N getRoot();
 
-    T getParent(T node);
+    N getParent(N node);
 
-    List<T> getChildren(T node);
+    List<N> getChildren(N node);
 }
