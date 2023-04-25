@@ -16,7 +16,32 @@ public class BinarySearchTree<T extends Comparable<T>>
 
     @Override
     public void insert(T item) {
+        BinarySearchTreeNode<T> newNode = new BinarySearchTreeNode<>(item);
 
+        if (this.root == null) {
+            this.root = newNode;
+            this.size++;
+            return;
+        }
+
+        BinarySearchTreeNode<T> currentNode = this.root;
+        BinarySearchTreeNode<T> parentNode = null;
+
+        while (currentNode != null) {
+            parentNode = currentNode;
+
+            if (item.compareTo(currentNode.getValue()) < 0)
+                currentNode = currentNode.getLeftChild();
+            else
+                currentNode = currentNode.getRightChild();
+        }
+
+        if (item.compareTo(parentNode.getValue()) < 0)
+            parentNode.setLeftChild(newNode);
+        else
+            parentNode.setRightChild(newNode);
+
+        this.size++;
     }
 
     @Override
