@@ -30,10 +30,14 @@ public class BinarySearchTree<T extends Comparable<T>>
         while (currentNode != null) {
             parentNode = currentNode;
 
-            if (item.compareTo(currentNode.getValue()) < 0)
+            int comparisonResult = item.compareTo(currentNode.getValue());
+
+            if (comparisonResult < 0)
                 currentNode = currentNode.getLeftChild();
-            else
+            else if (comparisonResult > 0)
                 currentNode = currentNode.getRightChild();
+            else // duplicate
+                return;
         }
 
         if (item.compareTo(parentNode.getValue()) < 0)
@@ -99,10 +103,11 @@ public class BinarySearchTree<T extends Comparable<T>>
             return null;
         }
 
-        int cmp = value.compareTo(current.getValue());
-        if (cmp < 0)
+        int comparisonResult = value.compareTo(current.getValue());
+
+        if (comparisonResult < 0)
             current.setLeftChild(remove(current.getLeftChild(), value));
-        else if (cmp > 0)
+        else if (comparisonResult > 0)
             current.setRightChild(remove(current.getRightChild(), value));
         else {
             if (current.getLeftChild() == null) {
