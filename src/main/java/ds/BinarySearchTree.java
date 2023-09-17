@@ -46,7 +46,8 @@ public class BinarySearchTree<T extends Comparable<T>>
 
     @Override
     public T remove(T item) {
-        return null;
+        root = removeRecursively(root, item);
+        return item;
     }
 
     @Override
@@ -91,5 +92,35 @@ public class BinarySearchTree<T extends Comparable<T>>
             children.add(node.getRightChild());
 
         return children;
+    }
+
+    private BinarySearchTreeNode<T> removeRecursively(BinarySearchTreeNode<T> current, T value) {
+        if (current == null)
+            return null;
+
+        if (value.compareTo(current.getValue()) == 0) {
+            size--;
+
+            if (current.getLeftChild() == null)
+                return current.getRightChild();
+            else if (current.getRightChild() == null)
+                return current.getLeftChild();
+
+            current.setValue(findSmallestValue(current.getRightChild()));
+            current.setRightChild(removeRecursively(current.getRightChild(), current.getValue()));
+
+            return current;
+        } else if (value.compareTo(current.getValue()) < 0) {
+            current.setLeftChild(removeRecursively(current.getLeftChild(), value));
+            return current;
+        } else {
+            current.setRightChild(removeRecursively(current.getRightChild(), value));
+            return current;
+        }
+    }
+
+    private T findSmallestValue(BinarySearchTreeNode<T> root) {
+        return root.getLeftChild() == null ? root.getValue()
+                : findSmallestValue(root.getLeftChild());
     }
 }
