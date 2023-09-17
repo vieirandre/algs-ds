@@ -46,7 +46,7 @@ public class BinarySearchTree<T extends Comparable<T>>
 
     @Override
     public T remove(T item) {
-        root = removeRecursively(root, item);
+        root = remove(root, item);
         return item;
     }
 
@@ -94,33 +94,35 @@ public class BinarySearchTree<T extends Comparable<T>>
         return children;
     }
 
-    private BinarySearchTreeNode<T> removeRecursively(BinarySearchTreeNode<T> current, T value) {
-        if (current == null)
+    private BinarySearchTreeNode<T> remove(BinarySearchTreeNode<T> current, T value) {
+        if (current == null) {
             return null;
+        }
 
-        if (value.compareTo(current.getValue()) == 0) {
-            size--;
-
-            if (current.getLeftChild() == null)
+        int cmp = value.compareTo(current.getValue());
+        if (cmp < 0)
+            current.setLeftChild(remove(current.getLeftChild(), value));
+        else if (cmp > 0)
+            current.setRightChild(remove(current.getRightChild(), value));
+        else {
+            if (current.getLeftChild() == null) {
+                size--;
                 return current.getRightChild();
-            else if (current.getRightChild() == null)
+            } else if (current.getRightChild() == null) {
+                size--;
                 return current.getLeftChild();
+            }
 
             current.setValue(findSmallestValue(current.getRightChild()));
-            current.setRightChild(removeRecursively(current.getRightChild(), current.getValue()));
 
-            return current;
-        } else if (value.compareTo(current.getValue()) < 0) {
-            current.setLeftChild(removeRecursively(current.getLeftChild(), value));
-            return current;
-        } else {
-            current.setRightChild(removeRecursively(current.getRightChild(), value));
-            return current;
+            current.setRightChild(remove(current.getRightChild(), current.getValue()));
         }
+
+        return current;
     }
 
-    private T findSmallestValue(BinarySearchTreeNode<T> root) {
-        return root.getLeftChild() == null ? root.getValue()
-                : findSmallestValue(root.getLeftChild());
+    private T findSmallestValue(BinarySearchTreeNode<T> node) {
+        return node.getLeftChild() == null ? node.getValue()
+                : findSmallestValue(node.getLeftChild());
     }
 }
