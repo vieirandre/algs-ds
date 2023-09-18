@@ -54,7 +54,7 @@ public class BinarySearchTree<T extends Comparable<T>>
 
     @Override
     public boolean contains(T item) {
-        return false;
+        return contains(root, item) != null;
     }
 
     @Override
@@ -114,5 +114,19 @@ public class BinarySearchTree<T extends Comparable<T>>
     private T findSmallestValue(BinarySearchTreeNode<T> node) {
         return node.getLeftChild() == null ? node.getValue()
                 : findSmallestValue(node.getLeftChild());
+    }
+
+    private BinarySearchTreeNode<T> contains(BinarySearchTreeNode<T> current, T value) {
+        if (current == null)
+            return null;
+
+        int comparisonResult = value.compareTo(current.getValue());
+
+        if (comparisonResult < 0)
+            return contains(current.getLeftChild(), value);
+        else if (comparisonResult > 0)
+            return contains(current.getRightChild(), value);
+        else
+            return current;
     }
 }
