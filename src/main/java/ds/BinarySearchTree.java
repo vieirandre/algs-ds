@@ -78,11 +78,6 @@ public class BinarySearchTree<T extends Comparable<T>>
         return this.root;
     }
 
-    @Override
-    public BinarySearchTreeNode<T> getParent(BinarySearchTreeNode<T> node) {
-        return node.getParent();
-    }
-
     private BinarySearchTreeNode<T> remove(BinarySearchTreeNode<T> current, T value) {
         if (current == null) {
             return null;
