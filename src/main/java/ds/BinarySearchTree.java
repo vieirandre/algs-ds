@@ -1,7 +1,5 @@
 package ds;
 
-import java.util.ArrayList;
-import java.util.List;
 import ds.nodes.BinarySearchTreeNode;
 
 public class BinarySearchTree<T extends Comparable<T>>
@@ -83,19 +81,6 @@ public class BinarySearchTree<T extends Comparable<T>>
     @Override
     public BinarySearchTreeNode<T> getParent(BinarySearchTreeNode<T> node) {
         return node.getParent();
-    }
-
-    @Override
-    public List<BinarySearchTreeNode<T>> getChildren(BinarySearchTreeNode<T> node) {
-        List<BinarySearchTreeNode<T>> children = new ArrayList<>();
-
-        if (node.getLeftChild() != null)
-            children.add(node.getLeftChild());
-
-        if (node.getRightChild() != null)
-            children.add(node.getRightChild());
-
-        return children;
     }
 
     private BinarySearchTreeNode<T> remove(BinarySearchTreeNode<T> current, T value) {
