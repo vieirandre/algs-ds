@@ -28,6 +28,17 @@ public class BinarySearchTreeTest {
         assertEquals(3, tree.size());
         assertEquals(Integer.valueOf(30), tree.getRoot().getLeftChild().getValue());
         assertEquals(Integer.valueOf(70), tree.getRoot().getRightChild().getValue());
+
+        tree.clear();
+
+        tree.insert(5);
+        tree.insert(5);
+        assertEquals(1, tree.size());
+
+        tree.insert(6);
+        tree.insert(7);
+        tree.insert(8);
+        assertEquals(4, tree.size());
     }
 
     @Test
@@ -63,7 +74,6 @@ public class BinarySearchTreeTest {
 
         assertTrue(tree.contains(5));
 
-        // Add more elements
         tree.insert(3);
         tree.insert(7);
         tree.insert(1);
