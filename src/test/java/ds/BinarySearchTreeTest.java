@@ -2,51 +2,81 @@ package ds;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 public class BinarySearchTreeTest {
+    private BinarySearchTree<Integer> tree;
+
+    @Before
+    public void setUp() {
+        tree = new BinarySearchTree<>();
+    }
+
     @Test
     public void testInsert() {
-        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+        assertTrue(tree.isEmpty());
 
-        assertTrue(bst.isEmpty());
+        tree.insert(50);
+        assertFalse(tree.isEmpty());
+        assertEquals(1, tree.size());
+        assertEquals(Integer.valueOf(50), tree.getRoot().getValue());
 
-        bst.insert(50);
-        assertFalse(bst.isEmpty());
-        assertEquals(1, bst.size());
-        assertEquals(Integer.valueOf(50), bst.getRoot().getValue());
+        tree.insert(30);
+        tree.insert(70);
+        tree.insert(30);
 
-        bst.insert(30);
-        bst.insert(70);
-        bst.insert(30);
-
-        assertEquals(3, bst.size());
-        assertEquals(Integer.valueOf(30), bst.getRoot().getLeftChild().getValue());
-        assertEquals(Integer.valueOf(70), bst.getRoot().getRightChild().getValue());
+        assertEquals(3, tree.size());
+        assertEquals(Integer.valueOf(30), tree.getRoot().getLeftChild().getValue());
+        assertEquals(Integer.valueOf(70), tree.getRoot().getRightChild().getValue());
     }
 
     @Test
     public void testRemove() {
-        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
-        bst.insert(50);
-        bst.insert(30);
-        bst.insert(70);
-        bst.insert(20);
-        bst.insert(40);
-        bst.insert(60);
-        bst.insert(80);
+        tree.insert(50);
+        tree.insert(30);
+        tree.insert(70);
+        tree.insert(20);
+        tree.insert(40);
+        tree.insert(60);
+        tree.insert(80);
 
-        assertEquals(7, bst.size());
+        assertEquals(7, tree.size());
 
-        bst.remove(20);
-        assertEquals(6, bst.size());
-        assertNull(bst.getRoot().getLeftChild().getLeftChild());
+        tree.remove(20);
+        assertEquals(6, tree.size());
+        assertNull(tree.getRoot().getLeftChild().getLeftChild());
 
-        bst.remove(30);
-        assertEquals(5, bst.size());
-        assertEquals(Integer.valueOf(40), bst.getRoot().getLeftChild().getValue());
+        tree.remove(30);
+        assertEquals(5, tree.size());
+        assertEquals(Integer.valueOf(40), tree.getRoot().getLeftChild().getValue());
 
-        bst.remove(50);
-        assertEquals(4, bst.size());
-        assertTrue(bst.getRoot().getValue().equals(60) || bst.getRoot().getValue().equals(40));
+        tree.remove(50);
+        assertEquals(4, tree.size());
+        assertTrue(tree.getRoot().getValue().equals(60) || tree.getRoot().getValue().equals(40));
+    }
+
+    @Test
+    public void testContains() {
+        assertFalse(tree.contains(5));
+
+        tree.insert(5);
+
+        assertTrue(tree.contains(5));
+
+        // Add more elements
+        tree.insert(3);
+        tree.insert(7);
+        tree.insert(1);
+        tree.insert(4);
+
+        assertTrue(tree.contains(3));
+        assertTrue(tree.contains(7));
+        assertTrue(tree.contains(1));
+        assertTrue(tree.contains(4));
+
+        assertFalse(tree.contains(10));
+
+        tree.remove(3);
+        assertFalse(tree.contains(3));
     }
 }
