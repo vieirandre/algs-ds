@@ -64,6 +64,37 @@ public class BinarySearchTreeTest {
         tree.remove(50);
         assertEquals(4, tree.size());
         assertTrue(tree.getRoot().getValue().equals(60) || tree.getRoot().getValue().equals(40));
+
+        tree.clear();
+
+        tree.insert(5);
+        tree.insert(3);
+        tree.insert(7);
+        tree.insert(2);
+        tree.insert(4);
+        tree.insert(6);
+        tree.insert(8);
+
+        tree.remove(2);
+        assertFalse(tree.contains(2));
+        assertEquals(6, tree.size());
+
+        tree.remove(3);
+        assertFalse(tree.contains(3));
+        assertTrue(tree.contains(4));
+        assertEquals(5, tree.size());
+
+        tree.remove(5);
+        assertFalse(tree.contains(5));
+        assertTrue(tree.contains(6));
+        assertEquals(4, tree.size());
+
+        tree.remove(10);
+        assertEquals(4, tree.size());
+
+        tree.clear();
+        tree.remove(4);
+        assertEquals(0, tree.size());
     }
 
     @Test
