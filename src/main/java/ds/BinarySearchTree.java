@@ -53,7 +53,7 @@ public class BinarySearchTree<T extends Comparable<T>>
     }
 
     @Override
-    public boolean search(T item) {
+    public boolean contains(T item) {
         return false;
     }
 

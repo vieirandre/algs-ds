@@ -5,7 +5,7 @@ public interface IStructurable<T> {
 
   T remove(T item);
 
-  boolean search(T item);
+  boolean contains(T item);
 
   boolean isEmpty();
 
