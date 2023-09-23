@@ -8,4 +8,6 @@ public interface ITree<T, N extends AbstractTreeNode<T, N>> extends IStructurabl
     T remove(T item);
 
     N getRoot();
+
+    int getHeight();
 }

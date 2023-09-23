@@ -78,10 +78,14 @@ public class BinarySearchTree<T extends Comparable<T>>
         return this.root;
     }
 
+    @Override
+    public int getHeight() {
+        return getHeight(root);
+    }
+
     private BinarySearchTreeNode<T> remove(BinarySearchTreeNode<T> current, T value) {
-        if (current == null) {
+        if (current == null)
             return null;
-        }
 
         int comparisonResult = value.compareTo(current.getValue());
 
@@ -123,5 +127,15 @@ public class BinarySearchTree<T extends Comparable<T>>
             return contains(current.getRightChild(), value);
         else
             return current;
+    }
+
+    private int getHeight(BinarySearchTreeNode<T> node) {
+        if (node == null)
+            return 0;
+
+        int leftHeight = getHeight(node.getLeftChild());
+        int rightHeight = getHeight(node.getRightChild());
+
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 }
