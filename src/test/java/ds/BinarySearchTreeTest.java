@@ -122,4 +122,20 @@ public class BinarySearchTreeTest {
         tree.remove(3);
         assertFalse(tree.contains(3));
     }
+
+    @Test
+    public void testGetHeight() {
+        assertEquals(0, tree.getHeight());
+
+        tree.insert(5);
+        assertEquals(1, tree.getHeight());
+
+        tree.insert(3);
+        tree.insert(7);
+        assertEquals(2, tree.getHeight());
+
+        tree.insert(1);
+        tree.insert(4);
+        assertEquals(3, tree.getHeight());
+    }
 }
