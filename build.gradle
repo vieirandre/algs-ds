@@ -1,9 +1,18 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-  testImplementation 'junit:junit:4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }

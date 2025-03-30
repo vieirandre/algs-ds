@@ -1,15 +1,14 @@
 package algs;
 
-import static org.junit.Assert.assertArrayEquals;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 public class SelectionSortTest {
     private AbstractSorting algorithm;
     private static SortingTestHelper helper;
 
-    @BeforeClass
+    @BeforeAll
     public static void initialize() {
         helper = new SortingTestHelper();
 

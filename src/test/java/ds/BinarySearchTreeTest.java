@@ -1,13 +1,13 @@
 package ds;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
-import org.junit.Before;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 public class BinarySearchTreeTest {
     private BinarySearchTree<Integer> tree;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         tree = new BinarySearchTree<>();
     }
