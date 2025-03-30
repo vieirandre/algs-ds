@@ -1,4 +1,4 @@
-package algs;
+package algs.utils;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -10,25 +10,25 @@ public class SortingTestHelper {
     private int[] largeInput, outputForLargeInput;
 
     public void initialize_SimpleInput_Case() {
-        simpleInput = new int[] { 5, 7, 3, 1, 4, 2, 6 };
-        outputForSimpleInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+        simpleInput = new int[] {5, 7, 3, 1, 4, 2, 6};
+        outputForSimpleInput = new int[] {1, 2, 3, 4, 5, 6, 7};
     }
 
     public void initialize_SimpleOrderedInput_Case() {
-        simpleOrderedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-        outputForSimpleOrderedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+        simpleOrderedInput = new int[] {1, 2, 3, 4, 5, 6, 7};
+        outputForSimpleOrderedInput = new int[] {1, 2, 3, 4, 5, 6, 7};
     }
 
     public void initialize_SimpleReversedInput_Case() {
-        simpleReversedInput = new int[] { 7, 6, 5, 4, 3, 2, 1 };
-        outputForSimpleReversedInput = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+        simpleReversedInput = new int[] {7, 6, 5, 4, 3, 2, 1};
+        outputForSimpleReversedInput = new int[] {1, 2, 3, 4, 5, 6, 7};
     }
 
     public void initialize_LargeInput_Case() {
         largeInput = new int[50000];
 
         for (int i = 1; i <= largeInput.length; i++) {
-            largeInput[i-1] = i;
+            largeInput[i - 1] = i;
         }
 
         outputForLargeInput = largeInput.clone();
@@ -42,7 +42,7 @@ public class SortingTestHelper {
 
         for (int i = array.length - 1; i > 0; i--) {
             int idx = rand.nextInt(i + 1);
-            
+
             // swap
             int temp = array[idx];
             array[idx] = array[i];
