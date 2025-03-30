@@ -2,10 +2,10 @@ package algs;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class QuickSort extends AbstractSorting {
+public class QuickSort<T extends Comparable<T>> extends AbstractSorting<T> {
     private boolean isRandomPivot = false;
 
-    public QuickSort(int[] input, boolean isRandomPivot) {
+    public QuickSort(T[] input, boolean isRandomPivot) {
         super(input);
         this.isRandomPivot = isRandomPivot;
     }
@@ -28,11 +28,11 @@ public class QuickSort extends AbstractSorting {
         if (isRandomPivot)
             randomizePivot(startIdx, endIdx);
 
-        int pivot = arr[endIdx]; // if !random, last element as pivot
+        T pivot = arr[endIdx]; // if !random, last element as pivot
         int i = startIdx - 1;
 
         for (int j = startIdx; j < endIdx; j++) {
-            if (arr[j] <= pivot) {
+            if (arr[j].compareTo(pivot) <= 0) {
                 i++;
                 swap(i, j);
             }

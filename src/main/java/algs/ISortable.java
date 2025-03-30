@@ -1,5 +1,7 @@
 package algs;
 
-public interface ISortable {
+public interface ISortable<T extends Comparable<T>> {
     void sort();
+
+    T[] getArray();
 }

@@ -1,18 +1,19 @@
 package algs;
 
-public class InsertionSort extends AbstractSorting {
-    public InsertionSort(int[] input) {
+public class InsertionSort<T extends Comparable<T>> extends AbstractSorting<T> {
+    public InsertionSort(T[] input) {
         super(input);
     }
 
     @Override
     public void sort() {
         for (int i = 1; i < size; i++) {
-            int key = arr[i], j = i - 1;
+            T key = arr[i];
+            int j = i - 1;
 
-            while (j >= 0 && key < arr[j]) {
+            while (j >= 0 && arr[j].compareTo(key) > 0) {
                 arr[j + 1] = arr[j];
-                j -= 1;
+                j--;
             }
 
             arr[j + 1] = key;

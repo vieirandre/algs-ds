@@ -3,6 +3,6 @@ package algs.utils;
 import algs.ISortable;
 
 @FunctionalInterface
-public interface SortingAlgorithmFactory {
-    ISortable create(int[] input);
+public interface SortingAlgorithmFactory<T extends Comparable<T>> {
+    ISortable<T> create(T[] input);
 }

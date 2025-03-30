@@ -1,17 +1,22 @@
 package algs;
 
-public abstract class AbstractSorting implements ISortable {
-    int[] arr;
-    int size;
+public abstract class AbstractSorting<T extends Comparable<T>> implements ISortable<T> {
+    protected T[] arr;
+    protected int size;
 
-    public AbstractSorting(int[] input) {
+    public AbstractSorting(T[] input) {
         this.arr = input;
         this.size = input.length;
     }
 
-    void swap(int x, int y) {
-        int temp = arr[x];
+    protected void swap(int x, int y) {
+        T temp = arr[x];
         arr[x] = arr[y];
         arr[y] = temp;
+    }
+
+    @Override
+    public T[] getArray() {
+        return arr;
     }
 }

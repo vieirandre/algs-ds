@@ -4,28 +4,28 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SortingTestHelper {
-    private int[] simpleInput, outputForSimpleInput;
-    private int[] simpleOrderedInput, outputForSimpleOrderedInput;
-    private int[] simpleReversedInput, outputForSimpleReversedInput;
-    private int[] largeInput, outputForLargeInput;
+    private Integer[] simpleInput, outputForSimpleInput;
+    private Integer[] simpleOrderedInput, outputForSimpleOrderedInput;
+    private Integer[] simpleReversedInput, outputForSimpleReversedInput;
+    private Integer[] largeInput, outputForLargeInput;
 
     public void initialize_SimpleInput_Case() {
-        simpleInput = new int[] {5, 7, 3, 1, 4, 2, 6};
-        outputForSimpleInput = new int[] {1, 2, 3, 4, 5, 6, 7};
+        simpleInput = new Integer[] {5, 7, 3, 1, 4, 2, 6};
+        outputForSimpleInput = new Integer[] {1, 2, 3, 4, 5, 6, 7};
     }
 
     public void initialize_SimpleOrderedInput_Case() {
-        simpleOrderedInput = new int[] {1, 2, 3, 4, 5, 6, 7};
-        outputForSimpleOrderedInput = new int[] {1, 2, 3, 4, 5, 6, 7};
+        simpleOrderedInput = new Integer[] {1, 2, 3, 4, 5, 6, 7};
+        outputForSimpleOrderedInput = new Integer[] {1, 2, 3, 4, 5, 6, 7};
     }
 
     public void initialize_SimpleReversedInput_Case() {
-        simpleReversedInput = new int[] {7, 6, 5, 4, 3, 2, 1};
-        outputForSimpleReversedInput = new int[] {1, 2, 3, 4, 5, 6, 7};
+        simpleReversedInput = new Integer[] {7, 6, 5, 4, 3, 2, 1};
+        outputForSimpleReversedInput = new Integer[] {1, 2, 3, 4, 5, 6, 7};
     }
 
     public void initialize_LargeInput_Case() {
-        largeInput = new int[50000];
+        largeInput = new Integer[50000];
 
         for (int i = 1; i <= largeInput.length; i++) {
             largeInput[i - 1] = i;
@@ -37,7 +37,7 @@ public class SortingTestHelper {
     }
 
     // Fisher–Yates shuffle
-    private void shuffleArray(int[] array) {
+    private void shuffleArray(Integer[] array) {
         Random rand = ThreadLocalRandom.current();
 
         for (int i = array.length - 1; i > 0; i--) {
@@ -50,35 +50,35 @@ public class SortingTestHelper {
         }
     }
 
-    public int[] getSimpleInput() {
+    public Integer[] getSimpleInput() {
         return simpleInput.clone();
     }
 
-    public int[] getOutputForSimpleInput() {
+    public Integer[] getOutputForSimpleInput() {
         return outputForSimpleInput.clone();
     }
 
-    public int[] getSimpleOrderedInput() {
+    public Integer[] getSimpleOrderedInput() {
         return simpleOrderedInput.clone();
     }
 
-    public int[] getOutputForSimpleOrderedInput() {
+    public Integer[] getOutputForSimpleOrderedInput() {
         return outputForSimpleOrderedInput.clone();
     }
 
-    public int[] getSimpleReversedInput() {
+    public Integer[] getSimpleReversedInput() {
         return simpleReversedInput.clone();
     }
 
-    public int[] getOutputForSimpleReversedInput() {
+    public Integer[] getOutputForSimpleReversedInput() {
         return outputForSimpleReversedInput.clone();
     }
 
-    public int[] getLargeInput() {
+    public Integer[] getLargeInput() {
         return largeInput.clone();
     }
 
-    public int[] getOutputForLargeInput() {
+    public Integer[] getOutputForLargeInput() {
         return outputForLargeInput.clone();
     }
 }

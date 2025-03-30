@@ -1,7 +1,9 @@
 package algs;
 
-public class MergeSort extends AbstractSorting {
-    public MergeSort(int[] input) {
+import java.util.Arrays;
+
+public class MergeSort<T extends Comparable<T>> extends AbstractSorting<T> {
+    public MergeSort(T[] input) {
         super(input);
     }
 
@@ -22,47 +24,28 @@ public class MergeSort extends AbstractSorting {
     }
 
     private void merge(int leftIdx, int middle, int rightIdx) {
-        int i, j, k;
         int leftSize = middle - leftIdx + 1;
         int rightSize = rightIdx - middle;
 
-        int[] leftArray = new int[leftSize];
-        int[] rightArray = new int[rightSize];
+        T[] leftArray = Arrays.copyOfRange(arr, leftIdx, middle + 1);
+        T[] rightArray = Arrays.copyOfRange(arr, middle + 1, rightIdx + 1);
 
-        for (i = 0; i < leftSize; i++)
-            leftArray[i] = arr[leftIdx + i]; // copy to left array
-        for (j = 0; j < rightSize; j++)
-            rightArray[j] = arr[middle + 1 + j]; // copy to right array
-
-        i = 0;
-        j = 0;
-        k = leftIdx; // initial indexes of subarrays
+        int i = 0, j = 0, k = leftIdx;
 
         // merge left and right arrays
         while (i < leftSize && j < rightSize) {
-            if (leftArray[i] <= rightArray[j]) {
-                arr[k] = leftArray[i];
-                i++;
-            } else {
-                arr[k] = rightArray[j];
-                j++;
-            }
-
-            k++;
+            if (leftArray[i].compareTo(rightArray[j]) <= 0)
+                arr[k++] = leftArray[i++];
+            else
+                arr[k++] = rightArray[j++];
         }
 
         // copy remaining elements of left half, if any
-        while (i < leftSize) {
-            arr[k] = leftArray[i];
-            i++;
-            k++;
-        }
+        while (i < leftSize)
+            arr[k++] = leftArray[i++];
 
         // copy remaining elements of right half, if any
-        while (j < rightSize) {
-            arr[k] = rightArray[j];
-            j++;
-            k++;
-        }
+        while (j < rightSize)
+            arr[k++] = rightArray[j++];
     }
 }
